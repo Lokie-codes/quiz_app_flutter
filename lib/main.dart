@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() => runApp(const QuizApp());
 
@@ -31,25 +32,44 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreSign = [];
 
-  List<String> questions = [
-    'Sun rises in the West and sets in the East.',
-    'BL is the most beautiful woman ever.',
-    'A slug\'s blood is green.',
-    'Sun rises in the West and sets in the East.',
-    'BL is the most beautiful woman ever.',
-    'A slug\'s blood is green.',
-    'Sun rises in the West and sets in the East.',
-    'BL is the most beautiful woman ever.',
-    'A slug\'s blood is green.',
+  // List<String> questions = [
+  //   'Sun rises in the West and sets in the East.',
+  //   'BL is the most beautiful woman ever.',
+  //   'A slug\'s blood is green.',
+  //   'Sun rises in the West and sets in the East.',
+  //   'BL is the most beautiful woman ever.',
+  //   'A slug\'s blood is green.',
+  //   'Sun rises in the West and sets in the East.',
+  //   'BL is the most beautiful woman ever.',
+  //   'A slug\'s blood is green.',
+  // ];
+  List<Question> questions = [
+    Question(q: 'Sun rises in the West and sets in the East.', a: false),
+    Question(q: 'BL is the most beautiful woman ever.', a: true),
+    Question(q: 'A slug\'s blood is green.', a: true),
+    Question(q: 'Sun rises in the West and sets in the East.', a: false),
+    Question(q: 'BL is the most beautiful woman ever.', a: true),
+    Question(q: 'A slug\'s blood is green.', a: true),
+    Question(q: 'Sun rises in the West and sets in the East.', a: false),
+    Question(q: 'BL is the most beautiful woman ever.', a: true),
+    Question(q: 'A slug\'s blood is green.', a: true),
   ];
 
   int questionNo = 0;
-
-  Icon scoreIcon() {
-    return const Icon(
-      Icons.close,
-      color: Colors.red,
-    );
+  bool answer = false;
+  // Question q1 = Question(q: 'Sun rises in the West and sets in the East.', a: false);
+  Icon scoreCheck(bool userAnswer, bool correctAnswer) {
+    if (correctAnswer == userAnswer) {
+      return const Icon(
+        Icons.done,
+        color: Colors.green,
+      );
+    } else {
+      return const Icon(
+        Icons.close,
+        color: Colors.red,
+      );
+    }
   }
 
   @override
@@ -64,7 +84,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionNo],
+                questions[questionNo].questionText,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,
@@ -79,10 +99,11 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(14.0),
             child: ElevatedButton(
               onPressed: () {
+                bool answer = questions[questionNo].questionAnswer;
                 setState(() {
                   questionNo++;
                   scoreSign.add(
-                    scoreIcon(),
+                    scoreCheck(true, answer),
                   );
                 });
               },
@@ -101,10 +122,11 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(14.0),
             child: ElevatedButton(
               onPressed: () {
+                bool answer = questions[questionNo].questionAnswer;
                 setState(() {
                   questionNo++;
                   scoreSign.add(
-                    scoreIcon(),
+                    scoreCheck(false, answer),
                   );
                 });
               },
