@@ -32,17 +32,6 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreSign = [];
 
-  // List<String> questions = [
-  //   'Sun rises in the West and sets in the East.',
-  //   'BL is the most beautiful woman ever.',
-  //   'A slug\'s blood is green.',
-  //   'Sun rises in the West and sets in the East.',
-  //   'BL is the most beautiful woman ever.',
-  //   'A slug\'s blood is green.',
-  //   'Sun rises in the West and sets in the East.',
-  //   'BL is the most beautiful woman ever.',
-  //   'A slug\'s blood is green.',
-  // ];
   List<Question> questions = [
     Question(q: 'Sun rises in the West and sets in the East.', a: false),
     Question(q: 'BL is the most beautiful woman ever.', a: true),
