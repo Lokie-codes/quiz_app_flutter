@@ -1,0 +1,49 @@
+Topic   Animals
+Question: Sharks are mammals.
+Answer: False - they are actually classified as fish.
+
+Question: Sea otters have a favorite rock they use to break open food.
+Answer: True - they keep these treasures in the loose skin under their arms.
+
+Question: The blue whale is the biggest animal to have ever lived.
+Answer: True - and that includes dinosaurs!
+
+Question: The hummingbird egg is the world's smallest bird egg.
+Answer: True - on the flip side, ostriches lay the largest eggs.
+
+Question: Pigs roll in the mud because they don’t like being clean.
+Answer: False - pigs have few sweat glands and their muddy baths help keep them cool.
+
+Question: Bats are blind.
+Answer: False - bats often find their way using ultrasound but their eyes work, just not particularly well).
+
+Question: A dog sweats by panting its tongue.
+Answer: False - canines sweat through glands in their paws.
+
+Question: It takes a sloth two weeks to digest a meal.
+Answer: True - that’s the slowest digestion time of any mammal!
+
+Question: The largest living frog is the Goliath frog of West Africa.
+Answer: True - this amphibian reaches lengths of 12.5 inches and weighs 7.2 pounds.
+
+Question: An ant can lift 1,000 times its body weight.
+Answer: False - ants can lift 5,000 times their body weight!
+
+Question: When exiting a cave, bats always go in the direction of the wind.
+Answer: False - bats always turn left out of a cave.
+
+Question: Galapagos tortoises sleep up to 16 hours a day.
+Answer: True - and they can go a year without food or water, so they have lots of time for extra sleep.
+
+Question: An octopus has seven hearts.
+Answer: False - it has three hearts and they do a lot of work. One heart circulates blood around the body and the other two pump blood past the gills and pick up oxygen.
+
+Question: The goat is the national animal of Scotland.
+Answer: False - it is the unicorn.
+
+Question: Herbivores are animal eaters.
+Answer: False - herbivores only eat plants.
+
+Question: A monkey was the first non-human to go into space.
+Answer: False - fruit flies were the first to make the trip. 
+

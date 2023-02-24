@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'question.dart';
+import 'quiz_brain.dart';
 
+QuizBrain quizBrain = QuizBrain();
 void main() => runApp(const QuizApp());
 
 class QuizApp extends StatelessWidget {
@@ -32,17 +33,6 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreSign = [];
 
-  List<Question> questions = [
-    Question(q: 'Sun rises in the West and sets in the East.', a: false),
-    Question(q: 'BL is the most beautiful woman ever.', a: true),
-    Question(q: 'A slug\'s blood is green.', a: true),
-    Question(q: 'Sun rises in the West and sets in the East.', a: false),
-    Question(q: 'BL is the most beautiful woman ever.', a: true),
-    Question(q: 'A slug\'s blood is green.', a: true),
-    Question(q: 'Sun rises in the West and sets in the East.', a: false),
-    Question(q: 'BL is the most beautiful woman ever.', a: true),
-    Question(q: 'A slug\'s blood is green.', a: true),
-  ];
 
   int questionNo = 0;
   bool answer = false;
@@ -73,7 +63,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionNo].questionText,
+                quizBrain.getQuestionText(questionNo),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,
@@ -88,7 +78,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(14.0),
             child: ElevatedButton(
               onPressed: () {
-                bool answer = questions[questionNo].questionAnswer;
+                bool answer = quizBrain.getQuestionAnswer(questionNo);
                 setState(() {
                   questionNo++;
                   scoreSign.add(
@@ -111,7 +101,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(14.0),
             child: ElevatedButton(
               onPressed: () {
-                bool answer = questions[questionNo].questionAnswer;
+                bool answer = quizBrain.getQuestionAnswer(questionNo);
                 setState(() {
                   questionNo++;
                   scoreSign.add(
