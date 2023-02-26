@@ -9,42 +9,42 @@ class QuizBrain {
   int getTotalQuestions() => _questionBank.length;
 
   final List<Question> _questionBank = [
-    Question(c: 'Animals', q: 'Sharks are mammals.', a: false),
+    Question(questionCategory: 'Animals', questionText: 'Sharks are mammals.', questionAnswer: false),
     Question(
-        c: 'Animals',
-        q: 'Sea otters have a favorite rock they use to break open food.',
-        a: true),
+        questionCategory: 'Animals',
+        questionText: 'Sea otters have a favorite rock they use to break open food.',
+        questionAnswer: true),
     Question(
-        c: 'Animals',
-        q: 'The blue whale is the biggest animal to have ever lived.',
-        a: true),
+        questionCategory: 'Animals',
+        questionText: 'The blue whale is the biggest animal to have ever lived.',
+        questionAnswer: true),
     Question(
-        c: 'Animals',
-        q: 'The hummingbird egg is the world\'s smallest bird egg.',
-        a: true),
+        questionCategory: 'Animals',
+        questionText: 'The hummingbird egg is the world\'s smallest bird egg.',
+        questionAnswer: true),
     Question(
-        c: 'Animals',
-        q: 'Pigs roll in the mud because they don’t like being clean.',
-        a: false),
-    Question(c: 'Animals', q: 'Bats are blind.', a: false),
-    Question(c: 'Animals', q: 'A dog sweats by panting its tongue.', a: false),
+        questionCategory: 'Animals',
+        questionText: 'Pigs roll in the mud because they don’t like being clean.',
+        questionAnswer: false),
+    Question(questionCategory: 'Animals', questionText: 'Bats are blind.', questionAnswer: false),
+    Question(questionCategory: 'Animals', questionText: 'A dog sweats by panting its tongue.', questionAnswer: false),
     Question(
-        c: 'Animals',
-        q: 'It takes a sloth two weeks to digest a meal.',
-        a: true),
+        questionCategory: 'Animals',
+        questionText: 'It takes a sloth two weeks to digest a meal.',
+        questionAnswer: true),
     Question(
-        c: 'Animals',
-        q: 'The largest living frog is the Goliath frog of West Africa.',
-        a: true),
+        questionCategory: 'Animals',
+        questionText: 'The largest living frog is the Goliath frog of West Africa.',
+        questionAnswer: true),
     Question(
-        c: 'Animals',
-        q: 'When exiting a cave, bats always go in the direction of the wind.',
-        a: false),
+        questionCategory: 'Animals',
+        questionText: 'When exiting a cave, bats always go in the direction of the wind.',
+        questionAnswer: false),
     Question(
-        c: 'Animals',
-        q: 'Galapagos tortoises sleep up to 16 hours a day.',
-        a: true),
-    Question(c: 'Animals', q: 'An octopus has seven hearts.', a: false),
+        questionCategory: 'Animals',
+        questionText: 'Galapagos tortoises sleep up to 16 hours a day.',
+        questionAnswer: true),
+    Question(questionCategory: 'Animals', questionText: 'An octopus has seven hearts.', questionAnswer: false),
   ];
 
   void nextQuestion() {
