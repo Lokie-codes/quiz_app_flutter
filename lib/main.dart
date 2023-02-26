@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
 void main() => runApp(const QuizApp());
@@ -34,6 +35,28 @@ class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreSign = [];
 
   bool answer = false;
+  void scoreCheck(bool userAnswer) {
+    bool correctAnswer = quizBrain.getQuestionAnswer();
+
+    if (quizBrain.getQuestionNumber() >= quizBrain.getTotalQuestions() - 1) {
+      Alert(context: context, title: 'You have reached end of Questions! ')
+          .show();
+      quizBrain.resetQuestionNumber();
+      scoreSign.clear();
+    } else {
+      if (correctAnswer == userAnswer) {
+        scoreSign.add(const Icon(
+          Icons.done,
+          color: Colors.green,
+        ));
+      } else {
+        scoreSign.add(const Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +87,8 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 setState(() {
                   quizBrain.nextQuestion();
-                  scoreSign.add(
-                    quizBrain.scoreCheck(true),
-                  );
+
+                  scoreCheck(true);
                 });
               },
               child: const Text(
@@ -86,9 +108,7 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 setState(() {
                   quizBrain.nextQuestion();
-                  scoreSign.add(
-                    quizBrain.scoreCheck(false),
-                  );
+                  scoreCheck(false);
                 });
               },
               child: const Text(

@@ -43,19 +43,23 @@ class QuizBrain {
     return _questionBank[_questionNumber].questionAnswer;
   }
 
-  Icon scoreCheck(bool userAnswer) {
-    bool correctAnswer = getQuestionAnswer();
-
-    if (correctAnswer == userAnswer) {
-      return const Icon(
-        Icons.done,
-        color: Colors.green,
-      );
+  bool isFinished() {
+    if (_questionNumber == _questionBank.length - 1) {
+      return true;
     } else {
-      return const Icon(
-        Icons.close,
-        color: Colors.red,
-      );
+      return false;
     }
+  }
+
+  void resetQuestionNumber() {
+    _questionNumber = 0;
+  }
+
+  int getQuestionNumber() {
+    return _questionNumber;
+  }
+
+  int getTotalQuestions() {
+    return _questionBank.length;
   }
 }
