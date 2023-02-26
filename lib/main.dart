@@ -33,23 +33,7 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreSign = [];
 
-
-  int questionNo = 0;
   bool answer = false;
-  // Question q1 = Question(q: 'Sun rises in the West and sets in the East.', a: false);
-  Icon scoreCheck(bool userAnswer, bool correctAnswer) {
-    if (correctAnswer == userAnswer) {
-      return const Icon(
-        Icons.done,
-        color: Colors.green,
-      );
-    } else {
-      return const Icon(
-        Icons.close,
-        color: Colors.red,
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.getQuestionText(questionNo),
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,
@@ -78,11 +62,10 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(14.0),
             child: ElevatedButton(
               onPressed: () {
-                bool answer = quizBrain.getQuestionAnswer(questionNo);
                 setState(() {
-                  questionNo++;
+                  quizBrain.nextQuestion();
                   scoreSign.add(
-                    scoreCheck(true, answer),
+                    quizBrain.scoreCheck(true),
                   );
                 });
               },
@@ -101,11 +84,10 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(14.0),
             child: ElevatedButton(
               onPressed: () {
-                bool answer = quizBrain.getQuestionAnswer(questionNo);
                 setState(() {
-                  questionNo++;
+                  quizBrain.nextQuestion();
                   scoreSign.add(
-                    scoreCheck(false, answer),
+                    quizBrain.scoreCheck(false),
                   );
                 });
               },
