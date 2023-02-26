@@ -39,7 +39,7 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
     if (quizBrain.getQuestionNumber() >= quizBrain.getTotalQuestions() - 1) {
-      Alert(context: context, title: 'You have reached end of Questions! ')
+      Alert(context: context, title: 'You have reached end of Questions!')
           .show();
       quizBrain.resetQuestionNumber();
       scoreSign.clear();
@@ -64,6 +64,34 @@ class _QuizPageState extends State<QuizPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        Expanded(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Category :  ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    quizBrain.getQuestionCategory(),
+                    style: const TextStyle(
+                      color: Colors.blue,
+                      fontSize: 24.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
         Expanded(
           flex: 5,
           child: Padding(
